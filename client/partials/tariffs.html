@@ -1,0 +1,35 @@
+<template name="tariffs">
+  <table class="table table-striped productdetailitem hidden">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Minutes</th>
+        <th>Texts</th>
+        <th>Data</th> 
+        <th></th>
+        <th>Gross Salary Reduction</th>
+        <th>Typical Saving</th>
+        <th>YOU PAY</th>
+      </tr>
+    </thead>
+    {{#each tariffs}}
+      {{> tariff}}
+    {{/each}}
+  </table>
+</template>
+
+
+<template name="tariff">
+   <tr class="tariff">     
+     <td><img src="{{networklogo this}}"></td>
+     <td>{{getDetailField this 'voice'}}</td>
+     <td>{{getDetailField this 'texts'}}</td>
+     <td>{{getDetailField this 'web'}}</td>
+     <td>{{getDetailField this 'other'}}</td>
+     <td>&pound;{{getProductTariffMonthlyDeduction this}}</td>
+     <td>&pound;{{getProductTariffMonthlySaving this}}</td>
+     <td>&pound;{{getProductTariffMonthlyYouPay this}}</td>
+     <td><a class="btn btn-lg btn-block btn-danger applynow hideonapplynow" data-tariff="{{this}}">APPLY NOW</a></td>
+     <td><a class="btn btn-lg btn-block btn-danger cancelapplynow hidden" data-tariff="{{_id}}">CANCEL</a></td>
+  </tr>
+</template>

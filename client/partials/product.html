@@ -1,0 +1,30 @@
+<template name='product'>
+   <div class="col-md-3 product">
+     <div class="panel panel-danger">
+                <div class="panel-heading">
+                    <h4 class="text-center">
+                      {{label}}</h4>
+                </div>
+                <div class="panel-body text-center hideonapplynow">
+                    <p class="lead">
+                      <strong>from &pound;{{fromAmount}} / month</strong></p>
+                      <img src="{{specimage}}" class='productdetailitem hidden'>
+                </div>
+                <ul class="list-group list-group-flush text-center hideonapplynow">
+                  <li class="list-group-item"><i class="icon-ok text-danger"></i><img src="{{frontpageimage}}"></li>
+                  <li class="list-group-item"><i class="icon-ok text-danger"></i>{{#each networkLogos}}{{> networkLogo}}{{/each}}</li>                    
+                </ul>
+                 {{> tariffs }}
+                <div class="panel-footer hideonapplynow">
+                  <a class="btn btn-lg btn-block btn-danger viewoffers" data-product="{{_id}}">VIEW OFFERS</a>
+                  <a class="btn btn-lg btn-block btn-danger viewallproducts hidden productdetailitem">VIEW ALL PRODUCTS</a>
+                </div>
+            </div>
+  </div>
+  
+</template>
+
+
+<template name='networkLogo'>
+  <img src="{{this}}">
+</template>

@@ -1,0 +1,1 @@
+Tariffs = new Meteor.Collection('tariffs');

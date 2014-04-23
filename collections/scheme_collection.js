@@ -1,0 +1,1 @@
+Scheme = new Meteor.Collection('scheme');
