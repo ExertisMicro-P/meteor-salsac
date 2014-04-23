@@ -1,6 +1,6 @@
 <template name='product'>
    <div class="col-md-3 product">
-     <div class="panel panel-danger">
+     <div class="panel panel-danger" data-price="{{fromAmount}}" data-label="{{label}}">
                 <div class="panel-heading">
                     <h4 class="text-center">
                       {{label}}</h4>
@@ -8,15 +8,26 @@
                 <div class="panel-body text-center hideonapplynow">
                     <p class="lead">
                       <strong>from &pound;{{fromAmount}} / month</strong></p>
-                      <img src="{{specimage}}" class='productdetailitem hidden'>
                 </div>
-                <ul class="list-group list-group-flush text-center hideonapplynow">
+                <ul class="list-group list-group-flush text-center hideonproductdetails">
                   <li class="list-group-item"><i class="icon-ok text-danger"></i><img src="{{frontpageimage}}"></li>
                   <li class="list-group-item"><i class="icon-ok text-danger"></i>{{#each networkLogos}}{{> networkLogo}}{{/each}}</li>                    
                 </ul>
+                 <div class="row productdetailitem hideonapplynow hidden">
+                   <div class="col-md-2 text-center">
+                     <img src="{{frontpageimage}}">
+                   </div>
+                   <div class="col-md-6">
+                     <img src="{{specimage}}">
+                   </div>
+                   <div class="col-md-4">
+                     Available on:<br/>
+                     {{#each networkLogos}}{{> networkLogo}}{{/each}}
+                   </div>
+                 </div>
                  {{> tariffs }}
                 <div class="panel-footer hideonapplynow">
-                  <a class="btn btn-lg btn-block btn-danger viewoffers" data-product="{{_id}}">VIEW OFFERS</a>
+                  <a class="btn btn-lg btn-block btn-danger viewoffers hideonproductdetails" data-product="{{_id}}">VIEW OFFERS</a>
                   <a class="btn btn-lg btn-block btn-danger viewallproducts hidden productdetailitem">VIEW ALL PRODUCTS</a>
                 </div>
             </div>

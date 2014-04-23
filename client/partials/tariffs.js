@@ -87,5 +87,5 @@ Template.product.events({
 
 
 Meteor.startup(function() {
-  Session.set('taxmultiplier', 0.32); // 20% tax bracket
+  
 });

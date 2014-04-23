@@ -1,8 +1,20 @@
 <template name='productList'>
-  <div class="container">
+  {{> filterbar}}
+  <div class="container" id="productlist">
   {{#each products}}
     {{> product}}
   {{/each}}
   </div>
   {{> beforeOrder}}
+</template>
+
+<template name='filterbar'>
+  <div class="btn-toolbar" id='sortbuttons'>
+    <div class="btn-group">
+      <button class="btn" disabled>Sort by</button>
+        <button class="btn" data-sort-by='label'>Name</button>
+        <button class="btn" data-sort-by='price'>Price</button>
+    </div>
+    
+  </div>
 </template>

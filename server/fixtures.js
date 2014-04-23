@@ -3,9 +3,15 @@
  */
 
 function randomProductLabel() {
-  var productlabels = ['Samsung','iPhone','Sony'];
+  var productlabels = ['Samsung','iPhone','Sony', 'LG', 'Nokia'];
   var rand = productlabels[Math.floor(Math.random() * productlabels.length)];
   return rand;
+}
+
+function randomProductPrice() {
+  
+  var rand = Math.floor(Math.random() * 77) + Math.floor(Math.random() * 7);
+  return rand.toFixed(2);
 }
 
 
@@ -29,7 +35,8 @@ if (Products.find().count() === 0) {
  	  
   for (var i = 0; i < 23; i++) {
   	
-    //product.label = randomProductLabel();
+    product.label = randomProductLabel();
+    product.deductfromsalary[0] = randomProductPrice();
     Products.insert(product);
    
   }

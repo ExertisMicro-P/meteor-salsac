@@ -43,7 +43,7 @@ Template.product.events({
     $('.product:not(.selected)').hide('slow');
     $('.product.selected').addClass('col-md-12').removeClass('col-md-3');
     
-    $('.product.selected .viewoffers').addClass('hidden');
+    $('.product.selected .hideonproductdetails').addClass('hidden');
     $('.product.selected .productdetailitem').removeClass('hidden');
         
   }, // click .viewoffers
@@ -55,7 +55,7 @@ Template.product.events({
     //$('.product:not(.selected)').removeClass('animated rollOut').addClass('animated rollIn');
     $('.product:not(.selected)').show('slow');
     
-    $('.product.selected .viewoffers').removeClass('hidden');
+    $('.product.selected .hideonproductdetails').removeClass('hidden');
     $('.product.selected .productdetailitem').addClass('hidden');
     
     Session.set('selectedproduct', null);
