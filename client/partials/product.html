@@ -7,7 +7,7 @@
                 </div>
                 <div class="panel-body text-center hideonapplynow">
                     <p class="lead">
-                      <strong>from &pound;{{fromAmount}} / month</strong></p>
+                      <strong>from &pound;{{pricefrom}} / month</strong></p>
                 </div>
                 <ul class="list-group list-group-flush text-center hideonproductdetails">
                   <li class="list-group-item"><i class="icon-ok text-danger"></i><img src="{{frontpageimage}}"></li>
@@ -25,7 +25,9 @@
                      {{#each networkLogos}}{{> networkLogo}}{{/each}}
                    </div>
                  </div>
-                 {{> tariffs }}
+
+               {{> tariffs}}
+       
                 <div class="panel-footer hideonapplynow">
                   <a class="btn btn-lg btn-block btn-danger viewoffers hideonproductdetails" data-product="{{_id}}">VIEW OFFERS</a>
                   <a class="btn btn-lg btn-block btn-danger viewallproducts hidden productdetailitem">VIEW ALL PRODUCTS</a>

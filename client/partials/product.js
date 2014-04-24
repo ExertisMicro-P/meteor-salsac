@@ -1,11 +1,12 @@
 Template.product.helpers( {
-  fromAmount: function() {
+  /*fromAmount: function() {
                 minval = 99999.00;
                 $.each(this.deductfromsalary, function(i,v) {
                   minval = Math.min(minval,v);
                 });
                 return minval.toFixed(2);
           }, // fromamount
+          */
   
   networkLogos: function() {
     logos = [];
@@ -36,24 +37,24 @@ Template.product.events({
     $(e.target).parents( ".product" ).addClass('selected');
     
     
-    
-    $('#carousel').hide('slow');
+    $('#carousel').fadeOut('slow');
     // hide all the other products
     //$('.product:not(.selected)').addClass('animated rollOut');
-    $('.product:not(.selected)').hide('slow');
+    $('.product:not(.selected)').fadeOut('slow');
     $('.product.selected').addClass('col-md-12').removeClass('col-md-3');
     
     $('.product.selected .hideonproductdetails').addClass('hidden');
     $('.product.selected .productdetailitem').removeClass('hidden');
+    $('html,body').animate({scrollTop:0},0);
         
   }, // click .viewoffers
   
   'click .viewallproducts': function(e) {
     e.preventDefault();
     $('.product.selected').addClass('col-md-3').removeClass('col-md-12');
-    $('#carousel').show('slow');
+    $('#carousel').fadeIn('slow');
     //$('.product:not(.selected)').removeClass('animated rollOut').addClass('animated rollIn');
-    $('.product:not(.selected)').show('slow');
+    $('.product:not(.selected)').fadeIn('slow');
     
     $('.product.selected .hideonproductdetails').removeClass('hidden');
     $('.product.selected .productdetailitem').addClass('hidden');

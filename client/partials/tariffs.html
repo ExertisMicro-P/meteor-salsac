@@ -15,7 +15,7 @@
     {{#each tariffs}}
       {{> tariff}}
     {{/each}}
-  </table>
+  </table> 
 </template>
 
 
@@ -26,9 +26,10 @@
      <td>{{getDetailField this 'texts'}}</td>
      <td>{{getDetailField this 'web'}}</td>
      <td>{{getDetailField this 'other'}}</td>
-     <td>&pound;{{getProductTariffMonthlyDeduction this}}</td>
-     <td>&pound;{{getProductTariffMonthlySaving this}}</td>
-     <td>&pound;{{getProductTariffMonthlyYouPay this}}</td>
+     {{! ../id gets the product _id }}
+     <td>&pound;{{getProductTariffMonthlyDeduction ../_id this}}</td>
+     <td>&pound;{{getProductTariffMonthlySaving ../_id this}}</td>
+     <td>&pound;{{getProductTariffMonthlyYouPay ../_id this}}</td>
      <td><a class="btn btn-lg btn-block btn-danger applynow hideonapplynow" data-tariff="{{this}}">APPLY NOW</a></td>
      <td><a class="btn btn-lg btn-block btn-danger cancelapplynow hidden" data-tariff="{{_id}}">CANCEL</a></td>
   </tr>

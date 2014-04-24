@@ -5,21 +5,28 @@
 function randomProductLabel() {
   var productlabels = ['Samsung','iPhone','Sony', 'LG', 'Nokia'];
   var rand = productlabels[Math.floor(Math.random() * productlabels.length)];
+  rand = rand + ' ';
+  for (var i=0; i<5; i++)
+    rand += String.fromCharCode(65 + Math.floor(Math.random() * 26));
   return rand;
 }
 
 function randomProductPrice() {
   
-  var rand = Math.floor(Math.random() * 77) + Math.floor(Math.random() * 7);
+  var rand = Math.floor(Math.random() * 23);
   return rand.toFixed(2);
 }
 
+
+Array.min = function( array ){
+    return Math.min.apply( Math, array );
+};
 
 
 
 
 product = {
-  deductfromsalary: {'orange_solo-25': '22.20', 'orange_solo-30': '25.32', '3_oneplan': 99.99},
+  deductfromsalary: {'orange_solo-25': 22.20, 'orange_solo-30': 25.32, '3_oneplan': 99.99},
   filter: '1000,Unlmited',
   frontpageimage: 'https://www.employeescheme.co.uk/ems/scheme-manager/image.php?image=1003',
   handsetcode: 'BLACKBERRY9320',
@@ -36,7 +43,11 @@ if (Products.find().count() === 0) {
   for (var i = 0; i < 23; i++) {
   	
     product.label = randomProductLabel();
-    product.deductfromsalary[0] = randomProductPrice();
+    product.labellower = product.label.toLowerCase();
+    product.deductfromsalary['orange_solo-25'] = randomProductPrice();
+    
+    // This will need to be calculated when we pull data from Scheme Manager
+    product.pricefrom = parseFloat(_.min(product.deductfromsalary));
     Products.insert(product);
    
   }
@@ -79,6 +90,5 @@ if (Products.find().count() === 0) {
                   
                   
   
+                                    }
   
-  
-}

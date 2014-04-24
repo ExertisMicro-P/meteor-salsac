@@ -1,4 +1,16 @@
+Template.tariffs.helpers({
+  
+  tariffswithproduct: function(productId) {
+    Session.set('currentlyrenderingproduct', Products.findOne(productId));
+    return Tariffs.find({});
+  } // tariffs
+}); // helpers
+                         
+                         
+                         
+
 Template.tariff.helpers({
+  
   networklogo: function(tariff) {
               tariffObj = Tariffs.findOne({name: tariff});
               if (typeof tariffObj != 'undefined')
@@ -15,18 +27,18 @@ Template.tariff.helpers({
                 return '';
             }, // getDetailField
   
-  getProductTariffMonthlyDeduction: function(tariff) {
-              product = Session.get('selectedproduct');
-              if (typeof product != 'undefined')
+  getProductTariffMonthlyDeduction: function(productId, tariff) {
+              product = Products.findOne(productId);
+              if (typeof product != 'undefined' && product != null)
                 return product.deductfromsalary[tariff];
               else 
                 return '';
             }, // getProductTariffMonthlyDeduction
 
   
-    getProductTariffMonthlySaving: function(tariff) {
-              product = Session.get('selectedproduct');
-              if (typeof product != 'undefined') {
+    getProductTariffMonthlySaving: function(productId, tariff) {
+              product = Products.findOne(productId);
+              if (typeof product != 'undefined' && product != null) {
                 saving = product.deductfromsalary[tariff] * Session.get('taxmultiplier');
                 return saving.toFixed(2);
   
@@ -34,9 +46,9 @@ Template.tariff.helpers({
                 return '';
             }, // getProductTariffMonthlySaving
 
-    getProductTariffMonthlyYouPay: function(tariff) {
-              product = Session.get('selectedproduct');
-              if (typeof product != 'undefined') {
+    getProductTariffMonthlyYouPay: function(productId, tariff) {
+              product = Products.findOne(productId);
+              if (typeof product != 'undefined' && product != null) {
                 saving = product.deductfromsalary[tariff] * Session.get('taxmultiplier');
                 youpay = product.deductfromsalary[tariff] - saving;
                 return youpay.toFixed(2);
