@@ -7,4 +7,8 @@ Meteor.startup(function() {
   Session.set('term', 24); // 24 months
   
   Session.set('productsorting','label');
+  
+  Session.set('showingproductdetails', false);
+  Session.set('applynowclicked', false);
+
 });

@@ -1,7 +1,19 @@
 <template name='product'>
    <div class="col-md-3 product">
      <div class="panel panel-danger" data-price="{{fromAmount}}" data-label="{{label}}">
-                <div class="panel-heading">
+       {{#if showingproductdetails}}
+       {{> productDetails}}
+       {{else}}
+       {{> productTeaser}}
+       {{/if}}
+     </div>
+  </div>
+       
+ </template>
+
+
+<template name="productTeaser">
+  <div class="panel-heading">
                     <h4 class="text-center">
                       {{label}}</h4>
                 </div>
@@ -13,7 +25,25 @@
                   <li class="list-group-item"><i class="icon-ok text-danger"></i><img src="{{frontpageimage}}"></li>
                   <li class="list-group-item"><i class="icon-ok text-danger"></i>{{#each networkLogos}}{{> networkLogo}}{{/each}}</li>                    
                 </ul>
-                 <div class="row productdetailitem hideonapplynow hidden">
+
+  <div class="panel-footer">
+                  <a class="btn btn-lg btn-block btn-danger viewoffers hideonproductdetails" data-product="{{_id}}">VIEW OFFERS</a>
+                </div>
+  
+</template>
+
+
+
+<template name="productDetails">
+<div class="panel-heading">
+                    <h4 class="text-center">
+                      {{label}}</h4>
+                </div>
+                <div class="panel-body text-center hideonapplynow">
+                    <p class="lead">
+                      <strong>from &pound;{{pricefrom}} / month</strong></p>
+                </div>
+                 <div class="row hideonapplynow">
                    <div class="col-md-2 text-center">
                      <img src="{{frontpageimage}}">
                    </div>
@@ -29,13 +59,12 @@
                {{> tariffs}}
        
                 <div class="panel-footer hideonapplynow">
-                  <a class="btn btn-lg btn-block btn-danger viewoffers hideonproductdetails" data-product="{{_id}}">VIEW OFFERS</a>
-                  <a class="btn btn-lg btn-block btn-danger viewallproducts hidden productdetailitem">VIEW ALL PRODUCTS</a>
+                  <a class="btn btn-lg btn-block btn-danger viewallproducts">VIEW ALL PRODUCTS</a>
                 </div>
-            </div>
-  </div>
   
 </template>
+
+
 
 
 <template name='networkLogo'>

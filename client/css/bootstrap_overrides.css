@@ -1,0 +1,17 @@
+h1 {
+  font-size: 30px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+
+.panel-heading {
+  padding: 1px;
+}
+
+.panel-body {
+  padding: 7px;
+}
+

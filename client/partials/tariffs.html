@@ -1,36 +1,38 @@
 <template name="tariffs">
-  <table class="table table-striped productdetailitem hidden">
-    <thead>
-      <tr>
-        <th></th>
-        <th>Minutes</th>
-        <th>Texts</th>
-        <th>Data</th> 
-        <th></th>
-        <th>Gross Salary Reduction</th>
-        <th>Typical Saving</th>
-        <th>YOU PAY</th>
-      </tr>
-    </thead>
+    <div class="container">
+      <div class="row hidden-xs">
+         <div class="col-md-1"></div>
+         <div class="col-md-1">Minutes</div>
+         <div class="col-md-1">Texts</div>
+         <div class="col-md-1">Data</div>
+         <div class="col-md-3"></div>
+         <div class="col-md-1">Gross Monthly Deduction</div>
+         <div class="col-md-1">Typical Saving</div>
+         <div class="col-md-1">You Pay</div>
+      </div>
     {{#each tariffs}}
       {{> tariff}}
     {{/each}}
-  </table> 
+  </div>
 </template>
 
 
 <template name="tariff">
-   <tr class="tariff">     
-     <td><img src="{{networklogo this}}"></td>
-     <td>{{getDetailField this 'voice'}}</td>
-     <td>{{getDetailField this 'texts'}}</td>
-     <td>{{getDetailField this 'web'}}</td>
-     <td>{{getDetailField this 'other'}}</td>
-     {{! ../id gets the product _id }}
-     <td>&pound;{{getProductTariffMonthlyDeduction ../_id this}}</td>
-     <td>&pound;{{getProductTariffMonthlySaving ../_id this}}</td>
-     <td>&pound;{{getProductTariffMonthlyYouPay ../_id this}}</td>
-     <td><a class="btn btn-lg btn-block btn-danger applynow hideonapplynow" data-tariff="{{this}}">APPLY NOW</a></td>
-     <td><a class="btn btn-lg btn-block btn-danger cancelapplynow hidden" data-tariff="{{_id}}">CANCEL</a></td>
-  </tr>
+   <div class="row tariff">     
+     <div class="col-md-1"><img src="{{networklogo this}}"></div>
+     <div class="col-md-1"><span class="visible-xs">Minutes:</span>{{getDetailField this 'voice'}}</div>
+     <div class="col-md-1"><span class="visible-xs">Texts:</span>{{getDetailField this 'texts'}}</div>
+     <div class="col-md-1"><span class="visible-xs">Data:</span>{{getDetailField this 'web'}}</div>
+     <div class="col-md-3"><span class="visible-xs">Other:</span>{{getDetailField this 'other'}}</div>
+     <div class="col-md-1"><span class="visible-xs">Gross Monthly Deduction:</span>&pound;{{getProductTariffMonthlyDeduction}}</div>
+     <div class="col-md-1"><span class="visible-xs">Typical Saving:</span>&pound;{{getProductTariffMonthlySaving}}</div>
+     <div class="col-md-1"><span class="visible-xs">YOU PAY:</span>&pound;{{getProductTariffMonthlyYouPay}}</div>
+     <div class="col-md-1">
+     {{#if applynowclicked}}
+       <a class="btn btn-lg btn-block btn-danger cancelapplynow" data-tariff="{{_id}}">CANCEL</a>
+     {{else}}  
+       <a class="btn btn-lg btn-block btn-danger applynow" data-tariff="{{this}}">APPLY NOW</a>
+     {{/if}}
+       </div>
+  </div><!-- row -->
 </template>

@@ -6,3 +6,11 @@
   left: 0;
   transition: all 0.5s ease;
 }
+
+.row.tariff {
+  margin-bottom:5px;
+  margin-top:5px;
+}
+.tariff.row:nth-of-type(odd) {
+    background: #e0e0e0;
+}

@@ -5,3 +5,7 @@ div.footer {
 div.footer img {
   width: 100%;
 }
+
+#beforeorderpanel {
+  display:none;
+}
