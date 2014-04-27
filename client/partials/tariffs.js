@@ -53,7 +53,7 @@ Template.tariff.helpers({
 
 
 
-Template.product.events({
+Template.tariff.events({
   'click .applynow': function(e) {
     e.preventDefault();
     $('.hideonapplynow').fadeOut('slow');
@@ -70,7 +70,7 @@ Template.product.events({
     
     $('#beforeorderpanel').fadeIn('slow');
     
-        $('html,body').animate({scrollTop:0},0);
+    $('html,body').animate({scrollTop:0},0);
 
   }, // click .applynow
   
@@ -90,7 +90,8 @@ Template.product.events({
     $('.cancelapplynow').fadeOut('slow');
     
     $('#beforeorderpanel').fadeOut('slow');
-
+    $('html,body').animate({scrollTop:0},0);
+    
   } // click .cancelapplynow
 }); // events
 

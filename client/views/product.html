@@ -1,18 +1,16 @@
 <template name='product'>
-   <div class="col-md-3 product">
-     <div class="panel panel-danger" data-price="{{fromAmount}}" data-label="{{label}}">
        {{#if showingproductdetails}}
        {{> productDetails}}
        {{else}}
        {{> productTeaser}}
        {{/if}}
-     </div>
-  </div>
        
  </template>
 
 
 <template name="productTeaser">
+   <div class="col-md-3 product">
+     <div class="panel panel-danger" data-price="{{fromAmount}}" data-label="{{label}}">
   <div class="panel-heading">
                     <h4 class="text-center">
                       {{label}}</h4>
@@ -27,14 +25,18 @@
                 </ul>
 
   <div class="panel-footer">
-                  <a class="btn btn-lg btn-block btn-danger viewoffers hideonproductdetails" data-product="{{_id}}">VIEW OFFERS</a>
+                  <a class="btn btn-lg btn-block btn-danger" href="{{pathFor 'productDetails'}}">VIEW OFFERS</a>
                 </div>
+     </div>
+  </div>
   
 </template>
 
 
 
 <template name="productDetails">
+   <div class="col-md-12 product">
+     <div class="panel panel-danger" data-price="{{fromAmount}}" data-label="{{label}}">
 <div class="panel-heading">
                     <h4 class="text-center">
                       {{label}}</h4>
@@ -59,8 +61,12 @@
                {{> tariffs}}
        
                 <div class="panel-footer hideonapplynow">
-                  <a class="btn btn-lg btn-block btn-danger viewallproducts">VIEW ALL PRODUCTS</a>
+                  <a class="btn btn-lg btn-block btn-danger viewallproducts" href={{pathFor 'productList'}}>VIEW ALL PRODUCTS</a>
                 </div>
+     </div>
+  </div>
+  
+  {{> beforeOrder}}
   
 </template>
 

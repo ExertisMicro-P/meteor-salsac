@@ -1,0 +1,28 @@
+<template name="applicationForm">
+  <h2>Application Form</h2>
+   {{> wizard id="applicationForm-wizard" route="applicationForm" steps=steps}}  
+</template>
+
+
+<template name="applicationFormStepOne">
+  {{#autoForm collection="Applications" doc=data id="applicationForm-step-one-form"}}
+
+    {{> afQuickField name="firstname"}}
+
+    {{> afQuickField name="lastname"}}
+
+    <button type="submit" class="btn btn-success btn-lg pull-right">Next</button>
+
+  {{/autoForm}}
+</template>
+
+<template name="applicationFormStepTwo">
+  {{#autoForm collection="Applications" doc=data id="applicationForm-step-two-form"}}
+
+    {{> afQuickField name="dob"}}
+
+    <button type="submit" class="btn btn-success btn-lg pull-right">Submit</button>
+
+  {{/autoForm}}
+</template>
+

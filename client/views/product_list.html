@@ -2,7 +2,7 @@
   {{> filterbar}}
   <div class="container" id="productlist">
   {{#each products}}
-    {{> product}}
+    {{> productTeaser}}
   {{/each}}
   </div>
   {{> beforeOrder}}
@@ -17,4 +17,8 @@
     </div>
     
   </div>
+</template>
+
+<template name="loading">
+  {{>spinner}}
 </template>

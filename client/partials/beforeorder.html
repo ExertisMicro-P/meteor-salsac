@@ -1,5 +1,6 @@
 <template name="beforeOrder">
   <div class="container" id="beforeorderpanel">
+
   {{#markdown}}
 #You Should Know That...
 
@@ -63,5 +64,11 @@ We'll now ask you to complete an online form.
 
     
   {{/markdown}}
+      <div class="container">
+    <a class="btn btn-lg btn-block btn-danger" href="{{pathFor 'applicationForm' '1'}}">Okay, let me apply</a>
+    <a class="btn btn-lg btn-block btn-danger cancelapplynow" data-tariff="{{_id}}">CANCEL</a>
+    </div>
+
   </div>
+  
 </template>

@@ -1,2 +1,2 @@
-Meteor.subscribe('products');
+//Meteor.subscribe('products');
 Meteor.subscribe('tariffs');

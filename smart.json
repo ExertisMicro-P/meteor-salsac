@@ -4,6 +4,9 @@
     "spin": {},
     "bootstrap-3": {},
     "bootstrap-alerts": {},
-    "animate-css": {}
+    "animate-css": {},
+    "fast-render": {},
+    "autoform": {},
+    "wizard": {}
   }
 }

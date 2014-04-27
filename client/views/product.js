@@ -40,9 +40,11 @@ Template.productDetails.helpers( {
 
 
 
-
+/*
 Template.product.events({
   'click .viewoffers': function(e) {
+    console.log('click .viewoffers');
+    
     e.preventDefault();
     
     product = Products.findOne($(e.target).data('product'));
@@ -59,7 +61,7 @@ Template.product.events({
     $('html,body').animate({scrollTop:0},0);
         
   }, // click .viewoffers
-  
+ 
   
   'click .viewallproducts': function(e) {
     e.preventDefault();
@@ -74,3 +76,4 @@ Template.product.events({
   } // click .viewallproducts
   
 }); // events
+*/
