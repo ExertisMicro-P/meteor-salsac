@@ -1,28 +1,177 @@
 <template name="applicationForm">
   <h2>Application Form</h2>
-   {{> wizard id="applicationForm-wizard" route="applicationForm" steps=steps}}  
-</template>
-
-
-<template name="applicationFormStepOne">
-  {{#autoForm collection="Applications" doc=data id="applicationForm-step-one-form"}}
-
-    {{> afQuickField name="firstname"}}
-
-    {{> afQuickField name="lastname"}}
-
-    <button type="submit" class="btn btn-success btn-lg pull-right">Next</button>
+  
+  {{#autoForm collection="SubmittedForms" id="applicationForm" type="normalpost" action="http://www.exertismicro-p.info/formtools/process.php" method="POST"}}
+  
+  <input type="hidden" name="form_tools_form_id" value="6" />
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        {{> formAboutYou}}
+      </div>
+      <div class="col-md-6">       
+        {{> formExistingPhone}}
+        {{> formExistingCustomer}}
+      </div>
+    </div>
+ 
+  <div class="row">
+      
+      <div class="col-md-6">
+       {{> formContact}}
+       {{> formDelivery}}
+       {{> formAddress}}       
+      </div>
+      <div class="col-md-6">
+        {{> formConsent}}
+        {{> formUnderstandInsurance}}
+        {{> formOverspendAdvice}}
+        {{> formConsenttandc}}
+        {{> formEsig}}
+         <button type="submit" class="btn btn-success btn-lg pull-right">Submit</button>
+      </div>
+    </div>
+  </div>
 
   {{/autoForm}}
 </template>
 
-<template name="applicationFormStepTwo">
-  {{#autoForm collection="Applications" doc=data id="applicationForm-step-two-form"}}
 
-    {{> afQuickField name="dob"}}
+<template name="formAboutYou">
+  <fieldset>
+    <legend>About You</legend>
+    <div class="row">
+      <div class="col-md-3">        
+        {{> afQuickField name="title" options="allowed"}}
+      </div>
+      <div class="col-md-4">
+        {{> afQuickField name="fname"}}
+      </div>
+      <div class="col-md-5">
+        {{> afQuickField name="sname"}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        {{> afQuickField name="dob"}}
+      </div>
+      <div class="col-md-4">
+        {{> afQuickField name="empno"}}
+      </div>
+    </div>
+  </fieldset>
+</template>
 
-    <button type="submit" class="btn btn-success btn-lg pull-right">Submit</button>
 
-  {{/autoForm}}
+<template name="formContact">
+  <fieldset>
+    <legend>If we need to contact you</legend>
+    <div class="col-md-5">
+      {{> afQuickField name="phone"}}
+    </div>
+    <div class="col-md-5">
+      {{> afQuickField name="email"}}
+    </div>
+  </fieldset>
+</template>
+
+<template name="formDelivery">
+  <fieldset>
+    <legend>Delivery</legend>
+    <div class="col-md-5">
+        {{> afQuickField name="deliverto"}}
+     </div>
+  </fieldset>
+</template>
+
+<template name="formAddress">
+  <fieldset>
+    <legend>Your Address</legend>
+    {{> afQuickField name="curflat_name" class="postcodeinfluencer"}}
+    {{> afQuickField name="curhouse_name" class="postcodeinfluencer"}}
+    {{> afQuickField name="curhouse_no" class="postcodeinfluencer"}}
+    {{> afQuickField name="curstreet_name"}}
+    {{> afQuickField name="curcounty"}}
+    {{> afQuickField name="curtown"}}
+    {{> afQuickField name="curcity"}}
+    {{> afQuickField name="curpostcode" class="postcodeinfluencer"}}
+  </fieldset>
+</template>
+
+<template name="formExistingPhone">
+  <fieldset>
+    <legend>Your Current Phone</legend>
+    <p>If you want to keep your existing Mobile Phone Number...</p>
+    {{> afQuickField name="oldnumber"}}
+    <p>We'll contact you when we need you to request your PAC number. Need Help?</p>
+  </fieldset>
+</template>
+
+<template name="formExistingCustomer">
+  <fieldset>
+    <legend>If your are an Existing Customer</legend>
+    {{> afQuickField name="renewal"}}
+  </fieldset>
+</template>
+
+
+<template name="formConsent">
+  <fieldset>
+    <legend>IMPORTANT!</legend>
+{{#markdown}}
+I consent to my monthly Gross Salary being **reduced by the equivalent of a monthly payment of £{{$.Session.get 'monthlydeduction'}}** for a period of **{{$.Session.get 'term'}} months**. If or when this 
+Agreement is terminated, then in such an event I may be obliged to make payments as detailed in the Terms and Conditions. This settlement of 
+outstanding amounts will be automatically deducted from my net salary. Should there be insufficient funds in my Salary, I will be notified 
+of any outstanding balance specifying a reasonable date for payment. Under this agreement, the goods **do not become my property** and I must 
+not sell them. I understand that to qualify for the tax and NI savings the handset **must be returned** at the end of the hire period. 
+{{/markdown}}
+{{> afQuickField name="consent"}}
+  </fieldset>
+</template>
+
+
+
+<template name="formUnderstandInsurance">
+  <fieldset>
+{{#markdown}}
+I understand that all products are supplied **uninsured and I am liable for the cost of replacement** should the product be lost, stolen or damaged
+{{/markdown}}
+    {{> afQuickField name="understandinsurance"}}
+  </fieldset>
+</template>
+
+<template name="formOverspendAdvice">
+  <fieldset>
+{{#markdown}}
+I agree that any overspends incurred on my mobile phone will be deducted by {{$.Session.get 'exertismicrop'}} and I will advise {{$.Session.get 'exertismicrop'}} if I change my bank account. If {{$.Session.get 'exertismicrop'}} are unable to take the outstanding amount from my bank account, I understand the phone will be barred until the overspend is paid. {{$.Session.get 'exertismicrop'}} will be able to terminate the contract if overspends cannot be paid and seek recovery via a third party debt collector.
+{{/markdown}}
+    {{> afQuickField name="overspendadvice"}}
+  </fieldset>
+</template>
+
+
+<template name="formConsenttandc">
+  <fieldset>
+{{#markdown}}
+**I have read and accept the <a href="{{pathFor 'TandCs'}}">Terms and Conditions</a>**
+{{/markdown}}
+    {{> afQuickField name="consenttandc"}}
+  </fieldset>
+</template>
+
+<template name="formEsig">
+  <fieldset>
+{{#markdown}}
+###IMPORTANT - READ THIS CAREFULLY TO FIND OUT ABOUT YOUR RIGHTS
+The **Consumer Credit Act 1974** lays down certain requirements for your protection which should have been complied with when this agreement was made. If they were not, the owner cannot enforce this agreement without a Court Order. If you would like to know more about your rights under the Act, contact either your local Trading Standards Department or your nearest Citizens' Advice Bureau.
+This is an Agreement regulated by the Consumer Credit Act 1974.
+**Sign it only if you want to be legally bound by its terms** 
+
+Enter your First Name and Last Name here. 
+This acts as your electronic signature.
+{{/markdown}}
+    {{> afQuickField name="esig"}}
+  </fieldset>
 </template>
 

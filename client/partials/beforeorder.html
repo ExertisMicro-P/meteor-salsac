@@ -8,11 +8,11 @@
 We'll reduce your salary every month. The amount is fixed and this reduction happens before your Tax and National Insurance is calculated.
 The savings quoted on this website are for illustration purposes only. Some months you may save more than the amount quoted. This depends on whether your overall tax situation means you fall into a higher or lower tax bracket. Whenever you are in the higher tax bracket, you could save more.
 The savings are because your pay is reduced before your tax and NI is calculated. Less pay means less tax & NI.
-For the deal you have selected you'll save at least **£{{session 'saving'}}** per month by paying less tax and NI. Some months you may save more.
+For the deal you have selected you'll save at least **£{{$.Session.get 'saving'}}** per month by paying less tax and NI. Some months you may save more.
 
 ##Your Salary is Reduced
-On your payslip you will always see your Gross Salary (your salary before tax) **reduced by £{{session 'monthlydeduction'}}** (incl. VAT). We'll do this every month for {{session 'term'}} months.
-In total, you'll pay us **£{{session 'totalcost'}}** (incl. VAT). You get some of this back by paying less tax and NI.
+On your payslip you will always see your Gross Salary (your salary before tax) **reduced by £{{$.Session.get 'monthlydeduction'}}** (incl. VAT). We'll do this every month for **{{$.Session.get 'term'}} months**.
+In total, you'll pay us **£{{$.Session.get 'totalcost'}}** (incl. VAT). You get some of this back by paying less tax and NI.
 Once we accept your application, you'll have 7 days to change your mind. Contact your Scheme Administrator or Customer Services on 0870 4607709 (calls charged at National Rate) to cancel your order.
 Prices quoted on this website are valid for 14 days.
 Product Compatibility
@@ -59,13 +59,13 @@ You must pay for any overspend that you incur on your monthly tariff e.g. once
   
 ##Your Application
 We'll now ask you to complete an online form.
-  So you know, your agreement will be with {{session 'schemecompany'}}, {{session 'schemecompanyaddress'}}
-  Please note it is the employee's responsibility to update {{session 'exertismicrop'}} of any change in personal details, particularly email address to allow us to contact you. Please contact 0870 4607709 or email salarysacrifice@exertismicro-p.co.uk with any changes.
+  So you know, your agreement will be with {{$.Session.get 'schemecompany'}}, {{$.Session.get 'schemecompanyaddress'}}
+  Please note it is the employee's responsibility to update {{$.Session.get 'exertismicrop'}} of any change in personal details, particularly email address to allow us to contact you. Please contact 0870 4607709 or email salarysacrifice@exertismicro-p.co.uk with any changes.
 
     
   {{/markdown}}
       <div class="container">
-    <a class="btn btn-lg btn-block btn-danger" href="{{pathFor 'applicationForm' '1'}}">Okay, let me apply</a>
+    <a class="btn btn-lg btn-block btn-danger" href="{{pathFor 'applicationForm'}}">Okay, let me apply</a>
     <a class="btn btn-lg btn-block btn-danger cancelapplynow" data-tariff="{{_id}}">CANCEL</a>
     </div>
 

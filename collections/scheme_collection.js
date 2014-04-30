@@ -1,1 +1,1 @@
-Scheme = new Meteor.Collection('scheme');
+CurrentScheme = new Meteor.Collection(null);

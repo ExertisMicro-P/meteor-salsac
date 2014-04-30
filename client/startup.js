@@ -10,5 +10,15 @@ Meteor.startup(function() {
   
   Session.set('showingproductdetails', false);
   Session.set('applynowclicked', false);
+  
+  // for https://atmospherejs.com/package/handlebar-helpers
+  //Helpers.addScope('Session', Session);
 
+  Deps.autorun(function () {
+    Session.set('scheme', CurrentScheme.findOne({}));
+  });
+
+  
 });
+
+

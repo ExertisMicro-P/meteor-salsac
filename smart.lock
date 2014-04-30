@@ -9,7 +9,9 @@
       "animate-css": {},
       "fast-render": {},
       "autoform": {},
-      "wizard": {}
+      "wizard": {},
+      "collection-helpers": {},
+      "handlebar-helpers": {}
     },
     "packages": {
       "iron-router": {
@@ -44,13 +46,23 @@
       },
       "autoform": {
         "git": "https://github.com/aldeed/meteor-autoform.git",
-        "tag": "v0.7.2",
-        "commit": "5d3265ab2607949ca776a45411ce11072413546d"
+        "tag": "v0.8.0",
+        "commit": "54a820a4a561e7f49d6fbc05d24b75c3d8d2e9be"
       },
       "wizard": {
         "git": "https://github.com/forwarder/meteor-wizard.git",
-        "tag": "v0.2.1",
-        "commit": "2f9d6293e9e1d11b048bbfe6c9415f8be57c190d"
+        "tag": "v0.2.2",
+        "commit": "2bad3285e0cf5f6fad51b2492486d5eb3b934e4d"
+      },
+      "collection-helpers": {
+        "git": "https://github.com/dburles/meteor-collection-helpers.git",
+        "tag": "v0.2.6",
+        "commit": "f04819e9a148fb8992c7a345503167dfb1b9ad3e"
+      },
+      "handlebar-helpers": {
+        "git": "https://github.com/raix/Meteor-handlebar-helpers.git",
+        "tag": "v0.1.1",
+        "commit": "0b407ab65e7c1ebd53d71aef0de2e2c1d21a597c"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",

@@ -15,18 +15,22 @@
                     <h4 class="text-center">
                       {{label}}</h4>
                 </div>
+       {{#if $exists scheme}}
                 <div class="panel-body text-center hideonapplynow">
                     <p class="lead">
                       <strong>from &pound;{{pricefrom}} / month</strong></p>
                 </div>
+       {{/if}}
                 <ul class="list-group list-group-flush text-center hideonproductdetails">
                   <li class="list-group-item"><i class="icon-ok text-danger"></i><img src="{{frontpageimage}}"></li>
                   <li class="list-group-item"><i class="icon-ok text-danger"></i>{{#each networkLogos}}{{> networkLogo}}{{/each}}</li>                    
                 </ul>
 
-  <div class="panel-footer">
+               {{#if $exists scheme}}
+                <div class="panel-footer">
                   <a class="btn btn-lg btn-block btn-danger" href="{{pathFor 'productDetails'}}">VIEW OFFERS</a>
                 </div>
+               {{/if}}
      </div>
   </div>
   

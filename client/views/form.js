@@ -1,20 +1,79 @@
-Template.applicationForm.steps = function() {
-  return [{
-    id: 'stepOne',
-    title: 'Step 1. About You.',
-    template: 'applicationFormStepOne',
-    formId: 'applicationForm-step-one-form'
-  }, {
-    id: 'stepTwo',
-    title: 'Step 2. Your Address',
-    template: 'applicationFormStepTwo',
-    formId: 'applicationForm-step-two-form',
-    onSubmit: function(data, mergedData) {
-      Applications.create(mergedData, function(err) {
-        if(!err) Router.go('/');
-      });
+AutoForm.hooks({
+  applicationForm: {
+   /* before: {
+      insert: function(doc) {},
+      update: function(docId, modifier) {},
+      remove: function(docId) {},
+      "methodName": function(doc) {}
+    },*/
+    /*
+    after: {
+      insert: function(error, result, template) {
+                }
+     /* update: function(error, result, template) {},
+      remove: function(error, result, template) {},
+      "methodName": function(error, result, template) {}
+    } */
+  /*
+    onSubmit: function(insertDoc, updateDoc, currentDoc) {},
+*/
+    //called when any operation succeeds, where operation will be
+    //"insert", "update", "remove", or the method name.
+    onSuccess: function(operation, result, template) {
+                      Session.set('selectedproduct', null);
+                  Session.set('selectedtariff', null);
+                  Session.set('applynowclicked', false);
+                  Router.go('productList');
+
+    }, 
+/*
+    //called when any operation fails, where operation will be
+    //"validation", "insert", "update", "remove", or the method name.
+    onError: function(operation, error, template) {},
+    formToDoc: function(doc) {},
+    docToForm: function(doc) {}
+    */
+  }
+});
+
+
+Template.formAddress.events({
+ 
+  'keyup .postcodeinfluencer': function(e) {
+      // check we  have enough data try a postcode lookup
+      value = $(e.target).val().toUpperCase();      
+      $(e.target).val(value);
+      Session.set($(e.target).attr('name'), value);      
+  }
+});
+
+Deps.autorun(function() {
+    curflat_name = Session.get('curflat_name');
+    curhouse_name = Session.get('curhouse_name');
+    curhouse_no = Session.get('curhouse_no');
+    curpostcode = Session.get('curpostcode').replace(' ','');
+  
+    postcodeRegex = /^([g][i][r][0][a][a])$|^((([a-pr-uwyz]{1}([0]|[1-9]\d?))|([a-pr-uwyz]{1}[a-hk-y]{1}([0]|[1-9]\d?))|([a-pr-uwyz]{1}[1-9][a-hjkps-uw]{1})|([a-pr-uwyz]{1}[a-hk-y]{1}[1-9][a-z]{1}))(\d[abd-hjlnp-uw-z]{2})?)$/i;
+    if ((curflat_name || curhouse_name || curhouse_no) && postcodeRegex.test(curpostcode)) {
+      // should be okay to lookup postcode
+      
+      Meteor.http.call("GET", 
+                                   "https://www.mybroadbandshop.co.uk/secure/sprint_via_ajax.php", 
+                                   {params: { 
+                                     postcode: curpostcode,
+                                     house_no: curhouse_no,
+                                     house_name: curhouse_name,
+                                     flat_name: curflat_name
+                                       }
+                                   }, function(error, result) {                                                
+                                                if (!error) {
+                                                  console.log(result);
+                                                }
+                                             });
     }
-  }]
-}
+  }
+); // Deps
+  
+  //https://www.mybroadbandshop.co.uk/secure/sprint_via_ajax.php?postcode='+postcode+'&house_no='+house_no+'&house_name='+house_name+'&flat_name='+flat_name};
 
 

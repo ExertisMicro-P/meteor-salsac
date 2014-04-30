@@ -15,4 +15,6 @@ fast-render
 spiderable
 autoform
 collection2
-wizard
+http
+collection-helpers
+handlebar-helpers
