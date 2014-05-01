@@ -9,6 +9,7 @@
     "autoform": {},
     "wizard": {},
     "collection-helpers": {},
-    "handlebar-helpers": {}
+    "handlebar-helpers": {},
+    "server-info": {}
   }
 }

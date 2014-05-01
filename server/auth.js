@@ -14,4 +14,4 @@ authenticateScheme: function(token) {
         
       return match;
     } //authenticateScheme
-}); // mthods
+}); // methods

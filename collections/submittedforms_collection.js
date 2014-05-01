@@ -1,3 +1,5 @@
+// Application forms submitted
+// The master for these will be Formtools2, not here
 SubmittedForms = new Meteor.Collection('submittedforms'
 , {
     schema: {
@@ -42,7 +44,7 @@ SubmittedForms = new Meteor.Collection('submittedforms'
             },
       deliverto: {
             type: String,
-            label: "Delivert To",
+            label: "Deliver To",
             },
       phone: {
             type: String,
@@ -66,7 +68,7 @@ SubmittedForms = new Meteor.Collection('submittedforms'
             },
       curstreet_name: {
             type: String,
-            label: "First name",
+            label: "Street",
             },
       curcounty: {
             type: String,

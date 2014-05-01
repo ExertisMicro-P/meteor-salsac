@@ -11,7 +11,8 @@
       "autoform": {},
       "wizard": {},
       "collection-helpers": {},
-      "handlebar-helpers": {}
+      "handlebar-helpers": {},
+      "server-info": {}
     },
     "packages": {
       "iron-router": {
@@ -63,6 +64,11 @@
         "git": "https://github.com/raix/Meteor-handlebar-helpers.git",
         "tag": "v0.1.1",
         "commit": "0b407ab65e7c1ebd53d71aef0de2e2c1d21a597c"
+      },
+      "server-info": {
+        "git": "https://github.com/percolatestudio/meteor-server-info.git",
+        "tag": "v0.6.1",
+        "commit": "b951de553f5e4ebec874b36b09dff4a4b7fea427"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",

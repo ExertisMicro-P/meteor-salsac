@@ -10,3 +10,12 @@ Meteor.publish('submittedforms', function() {
   return SubmittedForms.find({}); 
 });
 
+Meteor.publish('addresses', function() {
+  return Addresses.find({}); 
+});
+
+
+Meteor.publish('serverinfo', function() {
+  return ServerInfo.find({}); 
+});
+

@@ -88,6 +88,8 @@
 <template name="formAddress">
   <fieldset>
     <legend>Your Address</legend>
+    {{> afQuickField name="curpostcode" class="postcodeinfluencer"}}
+    {{> addressSelect}}
     {{> afQuickField name="curflat_name" class="postcodeinfluencer"}}
     {{> afQuickField name="curhouse_name" class="postcodeinfluencer"}}
     {{> afQuickField name="curhouse_no" class="postcodeinfluencer"}}
@@ -95,9 +97,27 @@
     {{> afQuickField name="curcounty"}}
     {{> afQuickField name="curtown"}}
     {{> afQuickField name="curcity"}}
-    {{> afQuickField name="curpostcode" class="postcodeinfluencer"}}
+    
   </fieldset>
 </template>
+
+
+<template name="addressSelect">
+  {{#if addresses.count}}
+    <select id='addressSelect'>
+      {{#each addresses}}
+      <option value="{{_id}}">{{flatNumber}} {{houseName}} {{houseNumber}} {{streetName}} {{locality}}</option>
+      {{/each}}
+    </select>
+  {{else}}
+  {{#if postocdeLookupInProgress}}
+    {{> spinner}}
+  {{/if}}
+  {{/if}}
+</template>  
+
+
+
 
 <template name="formExistingPhone">
   <fieldset>

@@ -13,6 +13,8 @@ Meteor.startup(function() {
   
   // for https://atmospherejs.com/package/handlebar-helpers
   //Helpers.addScope('Session', Session);
+  
+  Session.set('postcodeLookupInProgress', false);
 
   Deps.autorun(function () {
     Session.set('scheme', CurrentScheme.findOne({}));
