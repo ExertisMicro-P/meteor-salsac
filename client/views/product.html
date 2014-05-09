@@ -1,37 +1,54 @@
 <template name='product'>
-       {{#if showingproductdetails}}
-       {{> productDetails}}
-       {{else}}
-       {{> productTeaser}}
-       {{/if}}
-       
- </template>
+  
+  {{#if showingproductdetails}}
+  {{> productDetails}}
+  {{else}}
+  {{> productTeaser}}
+  {{/if}}
+  
+</template>
 
 
 <template name="productTeaser">
-   <div class="col-md-3 product">
-     <div class="panel panel-danger" data-price="{{fromAmount}}" data-label="{{label}}">
-  <div class="panel-heading">
-                    <h4 class="text-center">
-                      {{label}}</h4>
-                </div>
-       {{#if $exists scheme}}
-                <div class="panel-body text-center hideonapplynow">
-                    <p class="lead">
-                      <strong>from &pound;{{pricefrom}} / month</strong></p>
-                </div>
-       {{/if}}
-                <ul class="list-group list-group-flush text-center hideonproductdetails">
-                  <li class="list-group-item"><i class="icon-ok text-danger"></i><img src="{{frontpageimage}}"></li>
-                  <li class="list-group-item"><i class="icon-ok text-danger"></i>{{#each networkLogos}}{{> networkLogo}}{{/each}}</li>                    
-                </ul>
-
-               {{#if $exists scheme}}
-                <div class="panel-footer">
-                  <a class="btn btn-lg btn-block btn-danger" href="{{pathFor 'productDetails'}}">VIEW OFFERS</a>
-                </div>
-               {{/if}}
-     </div>
+  <div class="col-md-3 product productteaser">
+    <div class="panel panel-danger" data-price="{{fromAmount}}" data-label="{{label}}">
+      <div class="panel-heading">
+        <h4 class="text-center">
+          {{label}}
+        </h4>
+      </div>
+      {{#if $exists scheme}}
+      <div class="panel-body text-center hideonapplynow">
+        <p class="lead">
+          <strong>
+            from &pound;{{pricefrom}} / month
+          </strong>
+        </p>
+      </div>
+      {{/if}}
+      <ul class="list-group list-group-flush text-center hideonproductdetails">
+        <li class="list-group-item">
+          <i class="icon-ok text-danger">
+          </i>
+          <img src="{{frontpageimage}}">
+        </li>
+        <li class="list-group-item">
+          <i class="icon-ok text-danger">
+          </i>
+          {{#each networkLogos}}{{>
+          networkLogo}}{{/each}}
+        </li>
+        
+      </ul>
+      
+      {{#if $exists scheme}}
+      <div class="panel-footer">
+        <a class="btn btn-lg btn-block btn-danger" href="{{pathFor 'productDetails'}}">
+          VIEW OFFERS
+        </a>
+      </div>
+      {{/if}}
+    </div>
   </div>
   
 </template>
@@ -39,35 +56,44 @@
 
 
 <template name="productDetails">
-   <div class="col-md-12 product">
-     <div class="panel panel-danger" data-price="{{fromAmount}}" data-label="{{label}}">
-<div class="panel-heading">
-                    <h4 class="text-center">
-                      {{label}}</h4>
-                </div>
-                <div class="panel-body text-center hideonapplynow">
-                    <p class="lead">
-                      <strong>from &pound;{{pricefrom}} / month</strong></p>
-                </div>
-                 <div class="row hideonapplynow">
-                   <div class="col-md-2 text-center">
-                     <img src="{{frontpageimage}}">
-                   </div>
-                   <div class="col-md-6">
-                     <img src="{{specimage}}">
-                   </div>
-                   <div class="col-md-4">
-                     Available on:<br/>
-                     {{#each networkLogos}}{{> networkLogo}}{{/each}}
-                   </div>
-                 </div>
-
-               {{> tariffs}}
-       
-                <div class="panel-footer hideonapplynow">
-                  <a class="btn btn-lg btn-block btn-danger viewallproducts" href={{pathFor 'productList'}}>VIEW ALL PRODUCTS</a>
-                </div>
-     </div>
+  <div class="product">
+    <div class="panel panel-danger" data-price="{{fromAmount}}" data-label="{{label}}">
+      <div class="panel-heading">
+        <h4 class="text-center">
+          {{label}}
+        </h4>
+      </div>
+      <div class="panel-body text-center hideonapplynow">
+        <p class="lead">
+          <strong>
+            from &pound;{{pricefrom}} / month
+          </strong>
+        </p>
+      </div>
+      
+      <div class="row hideonapplynow">
+        <div class="col-md-2 text-center">
+          <img src="{{frontpageimage}}">
+        </div>
+        <div class="col-md-6">
+          <img src="{{specimage}}">
+        </div>
+        <div class="col-md-4">
+          Available on:
+          <br/>
+          {{#each networkLogos}}{{>
+          networkLogo}}{{/each}}
+        </div>
+      </div>
+      
+      {{> tariffs}}
+      
+      <div class="panel-footer hideonapplynow">
+        <a class="btn btn-lg btn-block btn-danger viewallproducts" href={{pathFor 'productList'}}>
+          VIEW ALL PRODUCTS
+        </a>
+      </div>
+    </div>
   </div>
   
   {{> beforeOrder}}

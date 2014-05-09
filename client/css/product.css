@@ -11,6 +11,20 @@
   margin-bottom:5px;
   margin-top:5px;
 }
+
 .tariff.row:nth-of-type(odd) {
     background: #e0e0e0;
 }
+
+
+.productteaser {
+   opacity: 1;
+   transition: opacity .5s ease-in-out;;
+   -moz-transition: opacity .5s ease-in-out;
+   -webkit-transition: opacity .5s ease-in-out;
+   }
+
+.fadeOut {
+  opacity: 0.15;
+}
+

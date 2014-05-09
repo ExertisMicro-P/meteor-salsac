@@ -5,11 +5,12 @@
     "bootstrap-3": {},
     "bootstrap-alerts": {},
     "animate-css": {},
-    "fast-render": {},
     "autoform": {},
     "wizard": {},
     "collection-helpers": {},
     "handlebar-helpers": {},
-    "server-info": {}
+    "server-info": {},
+    "apm": {},
+    "iron-router-active": {}
   }
 }

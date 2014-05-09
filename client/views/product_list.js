@@ -23,4 +23,19 @@ Template.productList.rendered = function() {
  
 }; // rendered
 
+
+function doStuffWhenWindowsScrolls() {
+    //var selectEl = template.find(".product"); // Arbitrary element in template
+    //var targetEl = event.target;                 // Element that triggered the event
+    windowscrolledby = $(window).scrollTop();
+    $('.productteaser').each( function(i) {         // Element that is handling this event function (the element referenced by "click a")
+          if (windowscrolledby > (this.offsetTop + $('#menu').height()))
+            $(this).addClass('fadeOut');
+          else 
+            $(this).removeClass('fadeOut');
+    });
+  }
+
+
+$(window).scroll(doStuffWhenWindowsScrolls);
  

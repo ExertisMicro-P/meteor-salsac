@@ -7,12 +7,13 @@
       "bootstrap-3": {},
       "bootstrap-alerts": {},
       "animate-css": {},
-      "fast-render": {},
       "autoform": {},
       "wizard": {},
       "collection-helpers": {},
       "handlebar-helpers": {},
-      "server-info": {}
+      "server-info": {},
+      "apm": {},
+      "iron-router-active": {}
     },
     "packages": {
       "iron-router": {
@@ -37,23 +38,18 @@
       },
       "animate-css": {
         "git": "https://github.com/nate-strauser/meteor-animate-css.git",
-        "tag": "v2.1.0",
-        "commit": "08d7d98ce292d528f05eab91bfb220b3a355c1d5"
-      },
-      "fast-render": {
-        "git": "https://github.com/arunoda/meteor-fast-render.git",
-        "tag": "v0.2.4",
-        "commit": "160a64bd61792f53a7c8848c5e979a953be13564"
+        "tag": "v3.1.1",
+        "commit": "59ce70b99dff5bc3d1227b789eefa43a761db158"
       },
       "autoform": {
         "git": "https://github.com/aldeed/meteor-autoform.git",
-        "tag": "v0.8.0",
-        "commit": "54a820a4a561e7f49d6fbc05d24b75c3d8d2e9be"
+        "tag": "v0.8.1",
+        "commit": "385051a5e4bbea3b2a54965800f5f530987ef432"
       },
       "wizard": {
         "git": "https://github.com/forwarder/meteor-wizard.git",
-        "tag": "v0.2.2",
-        "commit": "2bad3285e0cf5f6fad51b2492486d5eb3b934e4d"
+        "tag": "v0.2.3",
+        "commit": "2871343bf9d7faca4543e9c3de46a3991665cf45"
       },
       "collection-helpers": {
         "git": "https://github.com/dburles/meteor-collection-helpers.git",
@@ -69,6 +65,16 @@
         "git": "https://github.com/percolatestudio/meteor-server-info.git",
         "tag": "v0.6.1",
         "commit": "b951de553f5e4ebec874b36b09dff4a4b7fea427"
+      },
+      "apm": {
+        "git": "https://github.com/arunoda/meteor-apm-client.git",
+        "tag": "v1.2.6",
+        "commit": "426e3c3c33457736ec64d8af17c765d477d1476b"
+      },
+      "iron-router-active": {
+        "git": "https://github.com/XpressiveCode/iron-router-active.git",
+        "tag": "v0.2.0",
+        "commit": "1b05aad5325c3dfdb5186b9c288aa53013d767b8"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",

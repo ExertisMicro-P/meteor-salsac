@@ -1,3 +1,7 @@
+
+
+
+
 Template.productTeaser.helpers( {
   
   networkLogos: function() {
@@ -14,7 +18,7 @@ Template.productTeaser.helpers( {
       return logos;
     else
       return '';
-  } // networkLogos
+  }, // networkLogos
 }); // helpers
 
 
@@ -77,3 +81,5 @@ Template.product.events({
   
 }); // events
 */
+
+

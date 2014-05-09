@@ -11,13 +11,8 @@ SubmittedForms = new Meteor.Collection('submittedforms'
                           "Miss",
                           "Ms",
                           "Dr",
-                          "Captain",
-                          "Colonel",
-                          "Commander",
-                          "Corporal",
                           "Lady",
                           "Lord",
-                          "Major",
                           "Professor",
                           "Rev",
                           "Sir",
@@ -40,51 +35,56 @@ SubmittedForms = new Meteor.Collection('submittedforms'
       
       empno:{
             type: String,
-            label: "Employee Number",
+            label: "Employee Number"
             },
       deliverto: {
             type: String,
-            label: "Deliver To",
+            label: "Deliver To"
             },
       phone: {
             type: String,
-            label: "Phone",
+            label: "Phone"
             },
       email: {
             type: String,
-            label: "Email",
+            label: "Email"
             },
       curflat_name: {
             type: String,
             label: "Flat Name",
+            optional: true
             },
       curhouse_name: {
             type: String,
             label: "House Name",
+            optional: true
             },
       curhouse_no: {
             type: String,
             label: "House Number",
+            optional: true
             },
       curstreet_name: {
             type: String,
-            label: "Street",
+            label: "Street"
             },
       curcounty: {
             type: String,
             label: "County",
+            optional: true
             },
       curtown: {
             type: String,
             label: "Town",
+            optional: true
             },
       curcity: {
             type: String,
-            label: "City",
+            label: "City"
             },
       curpostcode: {
             type: String,
-            label: "Postcode",
+            label: "Postcode"
             },
       
       oldnumber: {
@@ -96,35 +96,45 @@ SubmittedForms = new Meteor.Collection('submittedforms'
       renewal:{
             type: Boolean,
             label: "Are you renewing after a previous Salary Sacrifice Scheme with us?",
+            defaultValue: false
             },
       consent:{
             type: Boolean,
             label: "I agree",
+            defaultValue: false,
+            allowedValues: [true]
             },
       understandinsurance: {
             type: Boolean,
             label: "I understand",
+            defaultValue: false,
+            allowedValues: [true]
             },
       overspendadvice: {
             type: Boolean,
             label: "I agree",
+            defaultValue: false,
+            allowedValues: [true]
             },
       consenttandc: {
             type: Boolean,
             label: ' ',
+            defaultValue: false,
+            allowedValues: [true]
             },
       optout: {
             type: Boolean,
             label: "Marketing Opt-Out",
+            defaultValue: true
             },
       esig: {
             type: String,
-            label: "E-signature",
+            label: "E-signature"
             },
       
       dob: {
             type: Date,
-            label: "Date of Birth",
+            label: "Date of Birth"
           }
     } // schema
 }

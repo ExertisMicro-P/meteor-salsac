@@ -1,11 +1,18 @@
 <template name="applicationForm">
-  <h2>Application Form</h2>
+ 
   
-  {{#autoForm collection="SubmittedForms" id="applicationForm" type="normalpost" action="http://www.exertismicro-p.info/formtools/process.php" method="POST"}}
+  {{#autoForm collection="SubmittedForms" id="applicationForm"
+                action="http://www.exertismicro-p.info/formtools/process.php" method="POST"}}
   
-  <input type="hidden" name="form_tools_form_id" value="6" />
   
-  <div class="container">
+  
+  <input type="hidden" name="form_tools_form_id" value="7" />
+  
+  <input type="hidden" name="form_tools_form_id" value="7" />
+  
+  
+  <div class="container well well-salsac">
+     <h2>Application Form</h2>
     <div class="row">
       <div class="col-md-6">
         {{> formAboutYou}}
@@ -88,15 +95,16 @@
 <template name="formAddress">
   <fieldset>
     <legend>Your Address</legend>
-    {{> afQuickField name="curpostcode" class="postcodeinfluencer"}}
+    {{> afQuickField name="curpostcode" class="postcodeinfluencer" autocomplete="off"}}
     {{> addressSelect}}
-    {{> afQuickField name="curflat_name" class="postcodeinfluencer"}}
-    {{> afQuickField name="curhouse_name" class="postcodeinfluencer"}}
-    {{> afQuickField name="curhouse_no" class="postcodeinfluencer"}}
-    {{> afQuickField name="curstreet_name"}}
-    {{> afQuickField name="curcounty"}}
-    {{> afQuickField name="curtown"}}
-    {{> afQuickField name="curcity"}}
+    {{! type="hidden" }}
+    {{> afQuickField  name="curflat_name"  class="postcodeinfluencer" }}
+    {{> afQuickField  name="curhouse_name" class="postcodeinfluencer"}}
+    {{> afQuickField  name="curhouse_no" class="postcodeinfluencer"}}
+    {{> afQuickField  name="curstreet_name"}}
+    {{> afQuickField  name="curcounty"}}
+    {{> afQuickField  name="curtown"}}
+    {{> afQuickField  name="curcity"}}
     
   </fieldset>
 </template>
@@ -104,15 +112,16 @@
 
 <template name="addressSelect">
   {{#if addresses.count}}
-    <select id='addressSelect'>
+    <select id='addressSelect' class="form-control">
+      <option value='none'>Select your Address</option>
       {{#each addresses}}
       <option value="{{_id}}">{{flatNumber}} {{houseName}} {{houseNumber}} {{streetName}} {{locality}}</option>
       {{/each}}
     </select>
   {{else}}
-  {{#if postocdeLookupInProgress}}
-    {{> spinner}}
-  {{/if}}
+    {{#if postcodeLookupInProgress}}
+      {{> spinner}}
+    {{/if}}
   {{/if}}
 </template>  
 
@@ -130,7 +139,7 @@
 
 <template name="formExistingCustomer">
   <fieldset>
-    <legend>If your are an Existing Customer</legend>
+    <legend>If you're an Existing Customer</legend>
     {{> afQuickField name="renewal"}}
   </fieldset>
 </template>

@@ -1,6 +1,6 @@
 <template name="menu">
   
-  <nav class="navbar  navbar-inverse navbar-fixed-top" role="navigation" >
+  <nav class="navbar  navbar-inverse navbar-fixed-top navbar-salsac" role="navigation" id="menu">
 			<div class="navbar-header"  style="width:100%;">
         <div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -16,15 +16,15 @@
 
         <div class="collapse navbar-collapse navbar-ex1-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li class="active">
+						<li class="{{isActiveRoute 'howItWorks'}}">
 							<a href="{{pathFor 'howItWorks'}}">How it Works</a>
 						</li>
      
-						<li>
+						<li class="{{isActiveRoute 'TandCs'}}">
 							<a href="{{pathFor 'TandCs'}}">T&Cs</a>
 						</li>        
           
-						<li>
+						<li class="{{isActiveRoute 'faqs'}}">
 							<a href="{{pathFor 'faqs'}}">FAQs</a>
 						</li>        
 
@@ -41,5 +41,7 @@
           </ul>
         </div>
       </div>
+          {{> header}}
+      {{> filterbar}}
 		</nav>
 </template>

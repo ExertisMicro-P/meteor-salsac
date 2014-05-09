@@ -9,3 +9,17 @@ div.footer img {
 #beforeorderpanel {
   display:none;
 }
+
+
+body {
+  /*background-image: url('/img/stockvault-grungy-wood-texture125411.jpg');*/
+  background-image: url('/img/green_suburb.jpg');
+}
+
+#main {
+  top: 180px;
+}
+
+nav#menu {
+  min-height: 200px;
+}

@@ -1,3 +1,5 @@
+// Client
+
 Meteor.startup(function() {
   Session.set('exertismicrop', 'Exertis Micro-P');
   Session.set('schemecompany', 'TLT');
@@ -14,7 +16,16 @@ Meteor.startup(function() {
   // for https://atmospherejs.com/package/handlebar-helpers
   //Helpers.addScope('Session', Session);
   
-  Session.set('postcodeLookupInProgress', false);
+  // use this for any data stored persistently on the Server
+  // it's a sort of session ID, so we can retrieve only our own values
+  // and not thos from another client
+  Session.set('uniqueClientID', Random.id());
+  /*
+  ServerInfo.insert(
+    { field: "postcodeLookupInProgress", value: false, clientID: Session.get('uniqueClientID') }
+  );
+  */
+
 
   Deps.autorun(function () {
     Session.set('scheme', CurrentScheme.findOne({}));

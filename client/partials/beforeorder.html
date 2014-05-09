@@ -1,6 +1,10 @@
 <template name="beforeOrder">
-  <div class="container" id="beforeorderpanel">
+  <div class="row" id="beforeorderpanel">
+    <div class="col-md-12 well well-salsac">
+      {{> beforeorderpanelbuttons}}
+    </div>
 
+    <div class="col-md-12 well well-salsac">
   {{#markdown}}
 #You Should Know That...
 
@@ -36,7 +40,7 @@ Under this Agreement you have potential liabilities upon default (breaking the a
 ##Credit Checking
 You will not be credit checked as part of the application process.
 
-##About Your Tariffs & Account
+##About Your Tariffs &amp; Account
 In entering into this Mobile agreement, you are entering into a business 
   tariff. Exertis Micro-P are the account holder and you will only be able to 
   access your account information by contacting Exertis Micro-P. To contact 
@@ -61,14 +65,24 @@ You must pay for any overspend that you incur on your monthly tariff e.g. once
 We'll now ask you to complete an online form.
   So you know, your agreement will be with {{$.Session.get 'schemecompany'}}, {{$.Session.get 'schemecompanyaddress'}}
   Please note it is the employee's responsibility to update {{$.Session.get 'exertismicrop'}} of any change in personal details, particularly email address to allow us to contact you. Please contact 0870 4607709 or email salarysacrifice@exertismicro-p.co.uk with any changes.
-
+   
     
   {{/markdown}}
-      <div class="container">
-    <a class="btn btn-lg btn-block btn-danger" href="{{pathFor 'applicationForm'}}">Okay, let me apply</a>
-    <a class="btn btn-lg btn-block btn-danger cancelapplynow" data-tariff="{{_id}}">CANCEL</a>
-    </div>
+       </div>
 
   </div>
+ 
+
   
+</template>
+
+<template name="beforeorderpanelbuttons">
+  <div class="row">
+    <div class="col-md-6">
+      <a class="btn btn-lg btn-block btn-primary" href="{{pathFor 'applicationForm'}}">Okay, Let Me Apply</a>
+      </div>
+    <div class="col-md-6">
+      <a class="btn btn-lg btn-block btn-danger cancelapplynow" data-tariff="{{_id}}">CANCEL</a>
+      </div>
+  </div>
 </template>

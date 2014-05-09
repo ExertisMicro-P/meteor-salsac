@@ -16,3 +16,5 @@
 /collection-helpers
 /handlebar-helpers
 /server-info
+/apm
+/iron-router-active

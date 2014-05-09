@@ -4,12 +4,12 @@ Handlebars.registerHelper('session',function(input){
 });
 */
 
-Handlebars.registerHelper('showingproductdetails', function(){
+UI.registerHelper('showingproductdetails', function(){
     return Session.get('showingproductdetails');
 });
 
 
-Handlebars.registerHelper('scheme', function() { 
+UI.registerHelper('scheme', function() { 
     return Session.get('scheme');
 });
 

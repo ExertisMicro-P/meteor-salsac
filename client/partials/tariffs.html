@@ -23,15 +23,15 @@
      <div class="col-md-1"><span class="visible-xs">Minutes:</span>{{getDetailField this 'voice'}}</div>
      <div class="col-md-1"><span class="visible-xs">Texts:</span>{{getDetailField this 'texts'}}</div>
      <div class="col-md-1"><span class="visible-xs">Data:</span>{{getDetailField this 'web'}}</div>
-     <div class="col-md-3"><span class="visible-xs">Other:</span>{{getDetailField this 'other'}}</div>
+     <div class="col-md-4"><span class="visible-xs">Other:</span>{{getDetailField this 'other'}}</div>
      <div class="col-md-1"><span class="visible-xs">Gross Monthly Deduction:</span>&pound;{{getProductTariffMonthlyDeduction}}</div>
      <div class="col-md-1"><span class="visible-xs">Typical Saving:</span>&pound;{{getProductTariffMonthlySaving}}</div>
      <div class="col-md-1"><span class="visible-xs">YOU PAY:</span>&pound;{{getProductTariffMonthlyYouPay}}</div>
-     <div class="col-md-1">
+     <div class="col-md-1 text-center">
      {{#if applynowclicked}}
        <a class="btn btn-lg btn-block btn-danger cancelapplynow" data-tariff="{{_id}}">CANCEL</a>
      {{else}}  
-       <a class="btn btn-lg btn-block btn-danger applynow" data-tariff="{{this}}">APPLY NOW</a>
+       <a class="btn btn-lg btn-block btn-primary applynow" data-tariff="{{this}}">APPLY NOW</a>
      {{/if}}
        </div>
   </div><!-- row -->
