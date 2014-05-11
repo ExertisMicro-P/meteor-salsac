@@ -19,3 +19,11 @@ Meteor.publish('serverinfo', function() {
   return ServerInfo.find({}); 
 });
 
+Meteor.publish('content', function() {
+  return Content.find({}); 
+});
+
+Meteor.publish('availableschemes', function() {
+  return SchemeCredentials.find({}, {fields: {token: false}});
+});
+

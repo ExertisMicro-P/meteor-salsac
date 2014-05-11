@@ -1,5 +1,12 @@
 <template name="faqs">
   <div class="container">
-    <div class="well">FAQs</div>
+    <h1>FAQs</h1>
+    <div class="well">{{{getContent 'FAQs'}}}</div>
+    {{#if currentUser}}
+    <div class="well">
+        <a href="{{pathFor 'updateContentInPlace' contentType='FAQs'}}" class="btn btn-primary"> <span class="glyphicon glyphicon-pencil"></span></a>
+    </div>
+    {{/if}}
+    
   </div>
 </template>

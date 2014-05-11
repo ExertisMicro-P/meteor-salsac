@@ -11,6 +11,11 @@
     "handlebar-helpers": {},
     "server-info": {},
     "apm": {},
-    "iron-router-active": {}
+    "iron-router-active": {},
+    "reactive-table": {},
+    "pagedown-bootstrap": {},
+    "font-awesome": {},
+    "accounts-ui-bootstrap-3-blaze": {},
+    "trunk8": {}
   }
 }

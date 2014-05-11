@@ -1,0 +1,14 @@
+<template name="layoutAdmin">
+	<div class="row">
+	<div id='layoutcontainer'>
+    {{> menuAdmin}}
+		<div id="mainadmin" class="col-md-10 col-md-offset-1" >
+      {{> bootstrapAlerts}}
+      {{> yield}}      
+		</div>
+   
+	</div>
+    </div>
+</template>
+
+

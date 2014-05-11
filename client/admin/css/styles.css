@@ -1,0 +1,13 @@
+body.admin {
+  /*background-image: url('/img/stockvault-grungy-wood-texture125411.jpg');*/
+  background-color: #c88;
+}
+
+
+nav#menuadmin {
+  min-height: 60px;
+}
+
+#login-buttons {
+  color: #fff;
+}

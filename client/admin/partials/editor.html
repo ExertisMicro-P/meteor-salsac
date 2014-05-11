@@ -1,0 +1,24 @@
+<template name="editor">
+    <div id="description">
+        <button type="button" class="btn btn-primary btn-xs" id="edit-btn" style="float: right; display: none;" title="Edit mode"><i class="fa fa-edit" id="edit-btn-icon"></i></button>
+        <button type="button" class="btn btn-primary btn-xs" id="preview-btn" style="float: right;" title="Preview mode"><i class="fa fa-eye" id="preview-btn-icon"></i></button>
+
+        <div class='wmd-panel'>
+            <div class="wmd-button-bar" id="wmd-button-bar"></div>
+            <div class="wmd-preview" id="wmd-preview" tabindex="4" style="display: none;">
+            </div>
+            <!-- <textarea class='wmd-input' id="wmd-input"></textarea> -->
+           {{> afQuickField name="content" rows="15" placeholder="schemaLabel" class='wmd-input' id="wmd-input"}}
+           <div class="alert alert-info">
+             Tips:<br>
+             <ul>
+               <li>Use 'Markdown' to format your Content - see <a href="http://www.codecademy.com/courses/web-intermediate-en-Bw3bg/0/1">this online Markdown course</a> or <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">this cheatsheet</a></li>
+               <li>Do NOT paste from MS Word!</li>
+             </ul>
+          </div>
+        </div>
+
+    </div>
+</template>
+
+

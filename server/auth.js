@@ -5,10 +5,11 @@ Meteor.methods({
         
         // DEV only, uses local collection to authenticate credentials
         match = SchemeCredentials.findOne({token: token});      
+    console.log("authenticateScheme: match=");console.log(match);
                                            
         // PRD will do a HTTP REST call to PHP which will check MySQL Scheme Manager DB
-        this.unblock();
-        console.log(Meteor.http.call("GET", "http://www.mocky.io/v2/5360bd4bc8ca888702c2d584"));
+        //this.unblock();
+        //console.log(Meteor.http.call("GET", "http://www.mocky.io/v2/5360bd4bc8ca888702c2d584"));
         /*
         console.log(Meteor.http.call("GET", "http:/api.exertismicro-p.info/scheme/"+token,{
                   'auth': {'salsacf:4be6e41ee05b3527abdd5f1cb53c185b053a4b45'

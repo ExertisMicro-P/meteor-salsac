@@ -1,0 +1,31 @@
+<template name='updateContent'>
+  <h1>Update Content</h1>
+  {{# autoForm collection="Content" id="updateContent" type='update' doc=this}}
+    
+    <div class="row">
+      <div class="col-md-2">
+        {{> afQuickField name='scheme' autofocus='' options=schemeAllowedValues}}
+      </div>
+      <div class="col-md-2">
+        {{> afQuickField name='contentFormat' options="allowed"}}      
+      </div>
+      <div class="col-md-2">
+        {{> afQuickField name='contentType' options="allowed"}}      
+      </div>
+    </div>
+
+    {{> editor}}
+  
+   {{> buttonsUpdate}}
+
+  {{/autoForm}}
+</template>
+
+
+<template name="buttonsUpdate">
+ 
+  <button type="submit" class="btn btn-primary insert">Update</button>
+
+  <button type="cancel" class="btn btn-default">Cancel</button>
+</template>
+

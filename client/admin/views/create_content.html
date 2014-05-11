@@ -1,0 +1,31 @@
+<template name='createContent'>
+  <h1>Create Content</h1>
+  {{# autoForm collection="Content" id="createContent" type='insert'}}
+    
+    <div class="row">
+      <div class="col-md-2">
+        {{> afQuickField name='scheme' autofocus='' options=schemeAllowedValues}}
+      </div>
+      <div class="col-md-2">
+        {{> afQuickField name='contentFormat' options="allowed"}}      
+      </div>
+      <div class="col-md-2">
+        {{> afQuickField name='contentType' options="allowed"}}      
+      </div>
+    </div>
+
+    {{> editor}}
+  
+   {{> buttonsInsert}}
+
+  {{/autoForm}}
+</template>
+
+
+<template name="buttonsInsert">
+ 
+  <button type="submit" class="btn btn-primary insert">Insert</button>
+
+  <button type="reset" class="btn btn-default">Reset</button>
+</template>
+

@@ -14,3 +14,6 @@ BrowserPolicy.content.allowConnectOrigin("wss://*.meteor.com");
 BrowserPolicy.content.allowImageOrigin("*.employeescheme.co.uk");
 
 BrowserPolicy.content.allowOriginForAll("*.googleapis.com");
+
+// for Font Awesome
+BrowserPolicy.content.allowOriginForAll("*.bootstrapcdn.com");

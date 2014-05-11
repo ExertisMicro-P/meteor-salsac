@@ -13,7 +13,12 @@
       "handlebar-helpers": {},
       "server-info": {},
       "apm": {},
-      "iron-router-active": {}
+      "iron-router-active": {},
+      "reactive-table": {},
+      "pagedown-bootstrap": {},
+      "font-awesome": {},
+      "accounts-ui-bootstrap-3-blaze": {},
+      "trunk8": {}
     },
     "packages": {
       "iron-router": {
@@ -68,13 +73,38 @@
       },
       "apm": {
         "git": "https://github.com/arunoda/meteor-apm-client.git",
-        "tag": "v1.2.6",
-        "commit": "426e3c3c33457736ec64d8af17c765d477d1476b"
+        "tag": "v1.2.7",
+        "commit": "97834d13daf2a3e2a6ce27a311fdf09a3796423b"
       },
       "iron-router-active": {
         "git": "https://github.com/XpressiveCode/iron-router-active.git",
         "tag": "v0.2.0",
         "commit": "1b05aad5325c3dfdb5186b9c288aa53013d767b8"
+      },
+      "reactive-table": {
+        "git": "https://github.com/ecohealthalliance/reactive-table.git",
+        "tag": "v0.3.10",
+        "commit": "6c4fb6e55ad22a7856a5077751a3051d55f5e2da"
+      },
+      "pagedown-bootstrap": {
+        "git": "https://github.com/Blahah/meteor-pagedown-bootstrap.git",
+        "tag": "v0.0.4",
+        "commit": "1ebc5c2b374da9362ab92cd485642e32e70b9369"
+      },
+      "font-awesome": {
+        "git": "https://github.com/nate-strauser/meteor-font-awesome.git",
+        "tag": "v4.0.3",
+        "commit": "61e9361384347547ae144f8228faa4deffda23db"
+      },
+      "accounts-ui-bootstrap-3-blaze": {
+        "git": "https://github.com/rajit/meteor-accounts-ui-bootstrap-3.git",
+        "tag": "v0.3.7",
+        "commit": "a40b15f4b6213040accec10df97a7793e3a25225"
+      },
+      "trunk8": {
+        "git": "https://github.com/ericraio/meteor-trunk8.git",
+        "tag": "v0.0.1",
+        "commit": "f2308ee06187f6ad53b63999c478051800aa5324"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",
@@ -95,6 +125,16 @@
         "git": "https://github.com/acreeger/meteor-moment.git",
         "tag": "v2.6.0",
         "commit": "26156df681750fd6e6ed77043eef32b6653ebbdf"
+      },
+      "just-i18n": {
+        "git": "https://github.com/subhog/meteor-just-i18n.git",
+        "tag": "v0.2.4",
+        "commit": "91decfcf5b3b5e67f202a67658350b862330bf3d"
+      },
+      "marked": {
+        "git": "https://github.com/chuangbo/meteor-marked.git",
+        "tag": "v0.3.2",
+        "commit": "850f63135cdeb05344c420bd586fd8af9cab75df"
       }
     }
   }

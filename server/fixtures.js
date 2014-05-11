@@ -88,8 +88,8 @@ if (Products.find().count() === 0) {
                            }
                  });
                                     
-   SchemeCredentials.insert({token: 'f11a45801c6a7938dd2ffe70c97f9fcb', schemename: 'barnsleyms'});
-   SchemeCredentials.insert({token: '8a991330824083a06c47b38263a91018If', schemename: 'sandwellms'});
+                                    SchemeCredentials.insert({token: 'f11a45801c6a7938dd2ffe70c97f9fcb', schemename: 'barnsleyms', scheme_id: 1});
+                                    SchemeCredentials.insert({token: '8a991330824083a06c47b38263a91018If', schemename: 'sandwellms', scheme_id: 2});
                                     
                                     
                   
