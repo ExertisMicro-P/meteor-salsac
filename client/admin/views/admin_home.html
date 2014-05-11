@@ -24,8 +24,8 @@
 
 
 <template name="contentActions">
-  <a href="{{pathFor 'updateContent' this}}" class="btn btn-primary"> <span class="glyphicon glyphicon-pencil"></span></a>
-  <a href="#" class="btn btn-danger"> <span class="glyphicon glyphicon-remove"></span></a>
+  <a href="{{pathFor 'updateContent' this}}"> <span class="glyphicon glyphicon-pencil"></span></a>
+  <a href="#" class="delete" id="{{_id}}"> <span class="glyphicon glyphicon-remove"></span></a>
 </template>
 
 

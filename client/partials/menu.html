@@ -33,6 +33,12 @@
 							<a href="{{pathFor 'logout'}}">Logout</a>
 						</li>        
             {{/if}}
+            
+            {{#if currentUser}}
+            <li class="{{isActiveRoute 'adminHome'}}">
+							<a href="{{pathFor 'adminHome'}}">Manage Content</a>
+						</li>
+            {{/if}}
           
           </ul>
           

@@ -33,10 +33,17 @@ Template.adminHome.events({
   // Delete Content Button
   'click .delete': function(e) {
     e.preventDefault();
+    contentId = $(e.target).parent().attr('id');
 
-    if (confirm("Delete this Content?")) {
-      var contentId = this._id;
-      Content.remove(contentId);
+    if (confirm("Delete this Content? "+contentId)) {
+      console.log('Click Delete: '+contentId);
+      Meteor.call('removeContent', contentId,
+                  function(error, scheme) {
+                    if(error) {
+                      console.log(error);
+                    }
+                        }
+                    );
       Router.go('adminHome');
     }
   }
