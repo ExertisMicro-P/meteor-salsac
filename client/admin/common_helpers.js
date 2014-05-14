@@ -26,7 +26,17 @@ UI.registerHelper("getContent", function(contentType) {
       // prepare content based on it's type
       switch (contentObj.contentFormat) {
         case 'markdown':
-          return marked(contentObj.content);
+          translations = Session.get('translations');         
+          str = contentObj.content.replace(/{{\w+}}/g, function(all) {
+            all = all.replace(/{{/g,'');
+            all = all.replace(/}}/g,'');
+            return translations[all] || '[['+all+']]';
+          });
+          
+              return marked(str);
+         
+          break;
+          
         default:
           return contentObj.content;
       } // switch
@@ -34,3 +44,10 @@ UI.registerHelper("getContent", function(contentType) {
   }  // getContent
   
 );
+
+
+
+
+
+
+

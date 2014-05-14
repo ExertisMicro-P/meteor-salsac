@@ -23,6 +23,11 @@ Meteor.publish('content', function() {
   return Content.find({}); 
 });
 
+Meteor.publish('placeholders', function() {
+  return Placeholders.find({}); 
+});
+
+
 Meteor.publish('availableschemes', function() {
   return SchemeCredentials.find({}, {fields: {token: false}});
 });

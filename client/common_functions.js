@@ -20,4 +20,21 @@ Deps.autorun(function () {
 
 
 
+ mapStringsForScheme = function(scheme) {
+    schemesPlaceholders = Placeholders.find({scheme: scheme.scheme_id});
+   translations = {};
+    schemesPlaceholders.forEach(function (placeholder) {
+              console.log(placeholder.placeholderName + ": " + placeholder.value);
+              translations[placeholder.placeholderName] = placeholder.value;
+            });
+    console.log(scheme);
+    console.log(translations);
+    i18n.map(scheme.schemename, translations);
+    Session.set('translations', translations);
+  };
+
+
+
+
+
 

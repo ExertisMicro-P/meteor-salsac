@@ -1,7 +1,7 @@
 <template name="faqs">
   <div class="container">
     <h1>FAQs</h1>
-    <div class="well">{{{getContent 'FAQs'}}}</div>
+    <div class="well" id='FAQscontent'>{{{getContent 'FAQs'}}}</div>
     {{#if currentUser}}
     <div class="well">
         <a href="{{pathFor 'updateContentInPlace' contentType='FAQs'}}" class="btn btn-primary"> <span class="glyphicon glyphicon-pencil"></span></a>
@@ -10,3 +10,4 @@
     
   </div>
 </template>
+

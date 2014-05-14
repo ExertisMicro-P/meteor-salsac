@@ -58,8 +58,8 @@
       },
       "collection-helpers": {
         "git": "https://github.com/dburles/meteor-collection-helpers.git",
-        "tag": "v0.2.6",
-        "commit": "f04819e9a148fb8992c7a345503167dfb1b9ad3e"
+        "tag": "v0.2.8",
+        "commit": "df94190a26414f20aed2dac4228cb3fd5487c5fc"
       },
       "handlebar-helpers": {
         "git": "https://github.com/raix/Meteor-handlebar-helpers.git",
@@ -73,8 +73,8 @@
       },
       "apm": {
         "git": "https://github.com/arunoda/meteor-apm-client.git",
-        "tag": "v1.2.7",
-        "commit": "97834d13daf2a3e2a6ce27a311fdf09a3796423b"
+        "tag": "v1.3.1",
+        "commit": "0ed9f0d89a31ff186f45130cb0ae508b56f268db"
       },
       "iron-router-active": {
         "git": "https://github.com/XpressiveCode/iron-router-active.git",
@@ -83,8 +83,8 @@
       },
       "reactive-table": {
         "git": "https://github.com/ecohealthalliance/reactive-table.git",
-        "tag": "v0.3.10",
-        "commit": "6c4fb6e55ad22a7856a5077751a3051d55f5e2da"
+        "tag": "v0.3.11",
+        "commit": "9ec88b8bcded8ced97cc8736f3d2ecbe3e7b926d"
       },
       "pagedown-bootstrap": {
         "git": "https://github.com/Blahah/meteor-pagedown-bootstrap.git",

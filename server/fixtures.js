@@ -92,8 +92,7 @@ if (Products.find().count() === 0) {
                                     SchemeCredentials.insert({token: '8a991330824083a06c47b38263a91018If', schemename: 'sandwellms', scheme_id: 2});
                                     
                                     
-                  
+                                    Placeholders.insert({scheme: 1, placeholderName: 'dummy', value: 'Dummy Value'});
                   
   
                                     }
-  

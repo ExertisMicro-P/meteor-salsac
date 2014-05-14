@@ -1,0 +1,22 @@
+<template name='createPlaceholder'>
+  <h1>Create Placeholder</h1>
+  {{# autoForm collection="Placeholders" id="createPlaceholder" type='insert'}}
+    
+    <div class="row">
+      <div class="col-md-2">
+        {{> afQuickField name='scheme' autofocus='' options=schemeAllowedValues}}
+      </div>
+      <div class="col-md-2">
+        {{> afQuickField name='placeholderName'}}      
+      </div>
+      <div class="col-md-2">
+        {{> afQuickField name='value'}}      
+      </div>
+    </div>
+  
+   {{> buttonsInsert}}
+
+  {{/autoForm}}
+</template>
+
+

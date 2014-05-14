@@ -1,19 +1,48 @@
-<template name='adminHome'>
-  <h1>Content</h1>
+<template name='adminHome'>  
+  {{#if currentUser}}
+    {{> contentList}}
+    {{> placeholderList}}
+  {{/if}}  
+</template>
 
-  {{> createButton}}
-  
+
+
+<template name='contentList'>
   <div class="well">
     <div class="row">
-      {{#if currentUser}}
-      {{> reactiveTable collection=content settings=settings}}
-      {{/if}}
+      <div class="col-md-6"><h1>Content</h1></div>
+      <div class="col-md-6">{{> createContentButton}}</div>
     </div>
   </div>
   
-  {{> createButton}}
-
+  
+  <div class="well">
+    <div class="row">
+      {{> reactiveTable collection=content settings=settings}}
+    </div>
+  </div>
+  
 </template>
+
+
+
+<template name='placeholderList'>
+  <div class="well">
+    <div class="row">
+      <div class="col-md-6"><h1>Placeholders</h1></div>
+      <div class="col-md-6">{{> createPlaceholderButton}}</div>
+    </div>
+  </div>
+  
+  <div class="well">
+    <div class="row">
+      {{ > reactiveTable collection=placeholders settings=settings}}
+    </div>
+  </div>
+  
+</template>
+
+
 
 
 
@@ -30,10 +59,20 @@
 
 
 
-<template name="createButton">
+<template name="createContentButton">
   <div class="row space-below-20">
     <form role="form" class="pull-right">
       <a href="{{pathFor 'createContent'}}" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-plus"> Create</span></a>
+    </form>
+  </div>
+</template>
+
+
+
+<template name="createPlaceholderButton">
+  <div class="row space-below-20">
+    <form role="form" class="pull-right">
+      <a href="{{pathFor 'createPlaceholder'}}" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-plus"> Create</span></a>
     </form>
   </div>
 </template>

@@ -1,4 +1,4 @@
-Template.adminHome.helpers({
+Template.contentList.helpers({
   rendered: function() {
       // shorten length content
       $('.truncateme').trunk8({
@@ -9,6 +9,7 @@ Template.adminHome.helpers({
   content: function() {
     return Content.find({});
     }, // content
+  
   
   settings: function () {
         return {
@@ -25,7 +26,48 @@ Template.adminHome.helpers({
             useFontAwesome: true
         };
     } // settings
-});
+  
+  
+ 
+}); // contentList.helpers
+
+
+
+
+Template.placeholderList.helpers({
+  rendered: function() {
+      // shorten length content
+      $('.truncateme').trunk8({
+            lines: 2
+          });  
+    }, // rendered
+  
+
+  
+  
+  placeholders: function() {
+    return Placeholders.find({});
+    }, // placeholders
+  
+  
+  settings: function () {
+        return {
+            rowsPerPage: 10,
+            showFilter: true,
+            fields: [
+                { key: '_id', label: 'Content ID' },
+                { key: 'scheme', label: 'Scheme' },
+                { key: 'placeholderName', label: 'Placeholder Name' },
+                { key: 'value', label: 'Value' },
+                { key: 'actions', label: 'Actions', tmpl: Template.placeholderActions }
+            ],
+            useFontAwesome: true
+        };
+    } // settings
+}); // placeholderList.helpers
+
+
+
 
 
 Template.adminHome.events({
