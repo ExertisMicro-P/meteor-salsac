@@ -1,6 +1,16 @@
+
+// Return all the scheme details for the specified scheme
+Meteor.publish('fullschemedetails', function(scheme_id) {
+  return FullSchemeDetails.find({scheme_id: scheme_id}); 
+});
+
+
+// Only publish products for the specified scheme
 Meteor.publish('products', function() {
   return Products.find({}); 
 });
+
+
 
 Meteor.publish('tariffs', function() {
   return Tariffs.find({}); 

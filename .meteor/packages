@@ -15,7 +15,6 @@ spiderable
 autoform
 collection2
 http
-collection-helpers
 handlebar-helpers
 server-info
 browser-policy

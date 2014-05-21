@@ -3,5 +3,12 @@ Meteor.methods({
     console.log('removeContent: '+id);
       check(id, String);
       Content.remove(id);
-  } // removeContent
+  }, // removeContent
+  
+  removePlaceholder: function(id) {
+    console.log('removePlaceholder: '+id);
+      check(id, String);
+      Placeholders.remove(id);
+  } // removePlaceholder
+
 });

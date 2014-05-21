@@ -8,7 +8,8 @@ Template.productList.helpers({
                   sortrule = {pricefrom:1};
                   break;
               } // switch
-    return Products.find({}, {sort: sortrule });
+              console.log('Template.productList.helpers.products')
+              return Products.find({}, {sort: sortrule });
             }
 });
 
@@ -18,6 +19,7 @@ Template.productList.rendered = function() {
   $('#sortbuttons div button').on( 'click', 
     function() {
       var sortByValue = $(this).attr('data-sort-by');
+      console.log('sortbuttons clicked: '+sortByValue);
       Session.set('productsorting',sortByValue);
     });
  
@@ -37,5 +39,6 @@ function doStuffWhenWindowsScrolls() {
   }
 
 
+// Handle fading when the user scrolls down the productList page
 $(window).scroll(doStuffWhenWindowsScrolls);
  

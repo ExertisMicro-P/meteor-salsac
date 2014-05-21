@@ -1,4 +1,4 @@
-.lead { font-size: 18px;margin-bottom:0px; }
+.lead { font-size: 12px;margin-bottom:0px; }
 
 #product.selected {
   position: absolute;
@@ -28,3 +28,8 @@
   opacity: 0.15;
 }
 
+.panel-heading > h4 {
+  font-size: 14px;
+  min-height: 30px;
+}
+}

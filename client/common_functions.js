@@ -19,10 +19,13 @@ Deps.autorun(function () {
 
 
 
+Deps.autorun(function () {
 
- mapStringsForScheme = function(scheme) {
+// mapStringsForScheme = function(scheme) {
+    scheme = Session.get('currentscheme');
+  if (scheme) {
     schemesPlaceholders = Placeholders.find({scheme: scheme.scheme_id});
-   translations = {};
+    translations = {};
     schemesPlaceholders.forEach(function (placeholder) {
               console.log(placeholder.placeholderName + ": " + placeholder.value);
               translations[placeholder.placeholderName] = placeholder.value;
@@ -31,7 +34,8 @@ Deps.autorun(function () {
     console.log(translations);
     i18n.map(scheme.schemename, translations);
     Session.set('translations', translations);
-  };
+  }
+});
 
 
 

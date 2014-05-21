@@ -37,9 +37,10 @@ product = {
   tariffs: ['orange_solo-25', 'orange_solo-30', '3_oneplan']
 };
 
+ /*
 if (Products.find().count() === 0) {
  
- 	  
+ 	 
   for (var i = 0; i < 23; i++) {
   	
     product.label = randomProductLabel();
@@ -51,6 +52,10 @@ if (Products.find().count() === 0) {
     Products.insert(product);
    
   }
+  */
+  
+/*
+if (Tariffs.find().count() === 0) {
   
   Tariffs.insert({name: 'orange_solo-25', 
                   details: {network: 'Orange', 
@@ -87,6 +92,9 @@ if (Products.find().count() === 0) {
                             web: "1GB"
                            }
                  });
+                 */
+
+/*
                                     
                                     SchemeCredentials.insert({token: 'f11a45801c6a7938dd2ffe70c97f9fcb', schemename: 'barnsleyms', scheme_id: 1});
                                     SchemeCredentials.insert({token: '8a991330824083a06c47b38263a91018If', schemename: 'sandwellms', scheme_id: 2});
@@ -95,4 +103,5 @@ if (Products.find().count() === 0) {
                                     Placeholders.insert({scheme: 1, placeholderName: 'dummy', value: 'Dummy Value'});
                   
   
-                                    }
+} // if Tariffs
+*/

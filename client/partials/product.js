@@ -9,8 +9,8 @@ Template.productTeaser.helpers( {
     
     $.each(this.tariffs, function(i,tariff) {
       tariffObj = Tariffs.findOne({name: tariff});
-      if (typeof tariffObj != 'undefined' && logos.lastIndexOf(tariffObj.details.networklogo)==-1) {
-        logos.push(tariffObj.details.networklogo);
+      if (typeof tariffObj != 'undefined' && logos.lastIndexOf(tariffObj.networklogo)==-1) {
+        logos.push(tariffObj.networklogo);
       }
       
     });
@@ -26,19 +26,23 @@ Template.productTeaser.helpers( {
 Template.productDetails.helpers( {
   
   networkLogos: function() {
-    logos = [];
-    
-    $.each(this.tariffs, function(i,tariff) {
-      tariffObj = Tariffs.findOne({name: tariff});
-      if (typeof tariffObj != 'undefined' && logos.lastIndexOf(tariffObj.details.networklogo)==-1) {
-        logos.push(tariffObj.details.networklogo);
-      }
-      
-    });
-    if (logos.length)
-      return logos;
-    else
+    if (this.tariffs) {
+      logos = [];
+
+      $.each(this.tariffs, function(i,tariff) {
+        tariffObj = Tariffs.findOne({name: tariff});
+        if (typeof tariffObj != 'undefined' && logos.lastIndexOf(tariffObj.networklogo)==-1) {
+          logos.push(tariffObj.networklogo);
+        }
+
+      });
+      if (logos.length)
+        return logos;
+      else
+        return '';
+    } else {
       return '';
+    }
   } // networkLogos
 }); // helpers
 

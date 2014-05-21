@@ -1,8 +1,9 @@
 Template.tariff.helpers({
-  networklogo: function(tariff) {
-              tariffObj = Tariffs.findOne({name: tariff});
-              if (typeof tariffObj != 'undefined')
-                return tariffObj.details.networklogo;
+  networklogo: function(tariffname) {
+              matchedTariff = Tariffs.findOne({name: tariffname});  
+              
+              if (matchedTariff)
+                return matchedTariff.networklogo;
               else
                 return '';
             }, // networklogo
@@ -10,13 +11,13 @@ Template.tariff.helpers({
   getDetailField: function(tariff,field) {
               tariffObj = Tariffs.findOne({name: tariff});
               if (typeof tariffObj != 'undefined')
-                return tariffObj.details[field];
+                return tariffObj[field];
               else
                 return '';
             }, // getDetailField
   
   getProductTariffMonthlyDeduction: function() {
-              product = Session.get('selectedproduct');
+              product = Session.get('currentProduct');
               if (product)
                 return product.deductfromsalary[this];
               else 
@@ -25,7 +26,7 @@ Template.tariff.helpers({
 
   
     getProductTariffMonthlySaving: function() {
-              product = Session.get('selectedproduct');
+              product = Session.get('currentProduct');
               if (typeof product != 'undefined' && product != null) {
                 saving = product.deductfromsalary[this] * Session.get('taxmultiplier');
                 return saving.toFixed(2);
@@ -35,7 +36,7 @@ Template.tariff.helpers({
             }, // getProductTariffMonthlySaving
 
     getProductTariffMonthlyYouPay: function() {
-              product = Session.get('selectedproduct');
+              product = Session.get('currentProduct');
               if (typeof product != 'undefined' && product != null) {
                 saving = product.deductfromsalary[this] * Session.get('taxmultiplier');
                 youpay = product.deductfromsalary[this] - saving;

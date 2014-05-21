@@ -73,7 +73,7 @@ Template.placeholderList.helpers({
 Template.adminHome.events({
   
   // Delete Content Button
-  'click .delete': function(e) {
+  'click .content.delete': function(e) {
     e.preventDefault();
     contentId = $(e.target).parent().attr('id');
 
@@ -86,7 +86,27 @@ Template.adminHome.events({
                     }
                         }
                     );
-      Router.go('adminHome');
-    }
-  }
+      //Router.go('adminHome');
+    } // if
+  }, // click
+  
+  
+    // Delete Content Button
+  'click .placeholder.delete': function(e) {
+    e.preventDefault();
+    placeholderId = $(e.target).parent().attr('id');
+
+    if (confirm("Delete this Placeholder? "+placeholderId)) {
+      console.log('Click Delete: '+placeholderId);
+      Meteor.call('removePlaceholder', placeholderId,
+                  function(error, scheme) {
+                    if(error) {
+                      console.log(error);
+                    }
+                        }
+                    );
+      //Router.go('adminHome');
+    } // if
+  } // click
+
 });
